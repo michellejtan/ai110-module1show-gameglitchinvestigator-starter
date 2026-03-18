@@ -10,6 +10,30 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 ---
 
+**Bug 1: Difficulty Range**
+|  | **Expected** | **Actual** |
+|--|--------------|------------|
+| Hard | should be something like 1 to 200 (a number bigger than 50). | 1 to 50 (easier than Normal)|
+| Info message | Shows actual range for selected difficulty	| Always says "1 to 100"|
+
+**Bug 2: Hints are reversed**
+|  | **Expected** | **Actual** |
+|--|--------------|------------|
+| Guess too high | 📉"Go LOWER!"	|📈"Go HIGHER!"|
+| Guess too low | 📈"Go HIGHER!"	| 📉"Go LOWER!"|
+
+Misleading the player in the wrong direction!
+
+**Bug 3: Scoring work incorrectly** 
+|  | **Expected** | **Actual** |
+|--|--------------|------------|
+| Wrong guess penalizes score | Lose 5 points |	- "Too High" on even attempts gains 5 points<br>- "Too Low" always loses 5 points|
+
+**Bug 4: `New Game` button** 
+|  | **Expected** | **Actual** |
+|--|--------------|------------|
+| Clicking the New Game button | resets the `secret`, `attempts`, `score` and clear `history`|- `history` is never cleared.<br>- `secret`, `score` is reset, and `attempts` is still wrong.|
+
 ## 2. How did you use AI as a teammate?
 
 - Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
