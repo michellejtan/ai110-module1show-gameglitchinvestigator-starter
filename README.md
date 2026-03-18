@@ -25,13 +25,27 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+**Game purpose:** A number guessing game where the player tries to guess a secret number within a limited number of attempts. The difficulty setting controls the range and attempt limit. Each wrong guess costs points; winning awards points based on how few attempts were used.
+
+**Bugs found:**
+- Hard difficulty range was (1–50), easier than Normal (1–100)
+- Hints were reversed — "Too High" said "Go HIGHER", "Too Low" said "Go LOWER"
+- Wrong guesses on even attempt numbers awarded +5 points instead of deducting
+- Win scoring had an off-by-one (`attempt_number + 1` instead of `attempt_number`)
+- New Game button doesn't reset `history`, `score`, or `status`
+
+**Fixes applied:**
+- Corrected Hard range to (1–200)
+- Hints now correctly say "Go LOWER" / "Go HIGHER" in `check_guess`
+- Removed even-attempt +5 scoring branch; wrong guesses always deduct 5
+- Fixed win scoring formula to use `attempt_number` directly
+- Refactored `parse_guess`, `update_score`, `check_guess`, `get_range_for_difficulty` into `logic_utils.py`
+- All 12 pytest cases pass
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+![Insert a screenshot of your fixed, winning game here](screenshot.png)
+
 
 ## 🚀 Stretch Features
 
