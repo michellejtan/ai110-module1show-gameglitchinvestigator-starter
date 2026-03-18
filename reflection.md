@@ -91,7 +91,7 @@ Because random.randint(...) was called at the top level of the script with no se
 Keeping UI code and logic code separate. Refactoring `parse_guess`, `update_score`, `check_guess`, and `get_range_for_difficulty` into `logic_utils.py` made the bugs easier to isolate, test, and fix. When logic lives in the UI layer, it's hard to test and easy to miss. I'll apply this separation from the start in future projects.
 
 **One thing I'd do differently:**
-I'd ask the AI to explain its reasoning before accepting an edit, not after. A few times I accepted a suggestion, then had to ask "wait, why does this work?" Asking upfront would help me learn more and catch mistakes earlier.
+I'd ask the AI to explain its reasoning before accepting an edit, not after. Asking upfront would help me learn more and catch mistakes earlier.
 
 **How this project changed the way I think about AI-generated code:**
 AI speed things up, but I can't just read AI-generated code and assume it's right; I need to trace through the logic, write tests, and verify behavior myself. AI is a fast first draft, not a final answer. I must carefully analyze and test everything before putting my trust in it.
